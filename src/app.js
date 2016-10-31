@@ -440,19 +440,19 @@ var MenuItem = cc.MenuItemSprite.extend({
   onEvent:function (callback) {
     return function () {
       // WEB
-      // var scale = new cc.ScaleBy(0.5, 1.5);
-      //
-      // var easeScale = new cc.EaseBackIn (scale);
-      //
-      // var cbFunc = new cc.callFunc(callback);
-      //
-      // var secuence = new cc.Sequence(easeScale, cbFunc);
-      //
-      // this.runAction(secuence);
+      var scale = new cc.ScaleBy(0.5, 1.5);
+
+      var easeScale = new cc.EaseBackIn (scale);
+
+      var cbFunc = new cc.callFunc(callback);
+
+      var secuence = new cc.Sequence(easeScale, cbFunc);
+
+      this.runAction(secuence);
       //
       
       // android, win32
-      callback();
+      // callback();
       //
     }
   }
