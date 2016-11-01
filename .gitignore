@@ -5,3 +5,4 @@
 .idea/
 frameworks/cocos2d-x/
 frameworks/runtime-src/
+publish/win32/

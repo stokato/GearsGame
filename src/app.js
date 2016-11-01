@@ -149,6 +149,7 @@ var TransmissionLayer = cc.Layer.extend({
         var gearRect = currGear.getBoundingBox();
         
         if(cc.rectContainsPoint(gearRect, tap)) {
+          
           movedGear = currGear;
           
           movedGear.setLocalZOrder(0);
@@ -250,8 +251,21 @@ var GearSprite = cc.Sprite.extend({
     
     this._driverGear = null;
     this._drivenGears = [];
-    
+        
     this.scheduleUpdate();
+  },
+  getBoundingBox:function () {
+    var size = this.getContentSize();
+    
+    size.width *= 0.8;
+    size.height *= 0.8;
+    
+    return {
+      x: this.getPositionX() - size.width * 0.5,
+      y: this.getPositionY() - size.height * 0.5,
+      width: size.width,
+      height: size.height
+    }
   },
   setSpindle:function (value) {
     this._spindle = value;
